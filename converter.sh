@@ -3,7 +3,7 @@
 package="imagemagick"
 
 converter () {
-    echo -e "\nPerforming Image conversion. Please be patient...\n"
+    echo -e "\nPerforming Image conversion. Please be patience...\n"
 
     if [ -f *.jpg ]; then
         mogrify -format png *.jpg
