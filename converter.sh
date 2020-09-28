@@ -5,23 +5,27 @@ package="imagemagick"
 converter () {
     echo -e "\nPerforming Image conversion. Please be patient...\n"
 
-    mogrify -format png *.jpg
+    if [ -f *.jpg ]; then
+        mogrify -format png *.jpg
 
-    if [ -d ~/Desktop/Image ]; then
+        if [ -d ~/Desktop/Image ]; then
 
-        mv *.png ~/Desktop/Image
+            mv *.png ~/Desktop/Image
 
-        echo -e "Image conversion successful. Please check ~/Desktop/Image directory\n"
+            echo -e "Image conversion successful. Please check ~/Desktop/Image directory\n"
 
-    elif [ ! -d ~/Desktop/Image ]; then
+        elif [ ! -d ~/Desktop/Image ]; then
 
-        mkdir ~/Desktop/Image
-        mv *.png ~/Desktop/Image
+            mkdir ~/Desktop/Image
+            mv *.png ~/Desktop/Image
 
-        echo -e "Image conversion successful. Please check ~/Desktop/Image directory\n"
+            echo -e "Image conversion successful. Please check ~/Desktop/Image directory\n"
 
+        else
+            echo -e "Error Occured!\n"
+        fi
     else
-        echo -e "Error Occured!\n"
+        echo -e "There is no '.JPG' files to convert!\n"
     fi
 }
 
