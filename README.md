@@ -18,7 +18,7 @@ chmod +x converter.sh
 ./converter.sh
 ```
 
-4. Output (*converted to .PNG*) of those **.JPG** images can be found under ***~/Desktop/Image*** directory.
+4. Output (*converted .PNG*) of those **.JPG** images can be found under ***~/Desktop/Image*** directory.
 
 ## Dependency
 
